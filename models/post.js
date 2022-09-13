@@ -8,7 +8,7 @@ const postsSchema = new Schema ({
   platform: String,
   game: {type: Schema.Types.ObjectId, ref: 'Game'},
   responses: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  author: {type:: Schema.Types.ObjectId, ref: 'Profile'},
+  author: {type: Schema.Types.ObjectId, ref: 'Profile'},
 },{
   timestamps: true,
 })
