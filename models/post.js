@@ -13,8 +13,8 @@ const postsSchema = new Schema ({
   timestamps: true,
 })
 
-const Posts = mongoose.model('Posts', postsSchema)
+const Post = mongoose.model('Posts', postsSchema)
 
 export{
-  Posts
+  Post
 }
