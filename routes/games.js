@@ -8,7 +8,7 @@ const router = Router()
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
-router.post('/search', checkAuth, gamesCtrl.search)
+router.get('/search/:query', checkAuth, gamesCtrl.search)
 export {
   router
 }

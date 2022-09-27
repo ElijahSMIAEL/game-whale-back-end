@@ -20,8 +20,8 @@ app.use(formData.parse())
 
 app.use('/api/profiles', profilesRouter)
 app.use('/api/auth', authRouter)
-app.use('/games', gamesRouter)
-app.use('/posts', postsRouter)
+app.use('/api/games', gamesRouter)
+app.use('/api/posts', postsRouter)
 
 app.use(function (req, res, next) {
   res.status(404).json({ err: 'Not found' })
