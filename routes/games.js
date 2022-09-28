@@ -9,6 +9,7 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/search/:query', checkAuth, gamesCtrl.search)
+router.get('/search/:query/:id', checkAuth, gamesCtrl.gameDetails)
 export {
   router
 }

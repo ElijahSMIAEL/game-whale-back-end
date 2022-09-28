@@ -17,6 +17,21 @@ function search(req, res) {
   })
 }
 
+function gameDetails(req,res) {
+  axios.get(`${apuiBaseUrl}/${req.params.id}&key=${apiKey}`)
+  .then((result) => {
+    Game.findOne({rawgId: result.data.id})
+    .then ((game) => {
+      res.json({ game: game.data})
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
-  search
+  search,
+  gameDetails
 }
