@@ -9,7 +9,7 @@ const profileSchema = new Schema({
   steamTag: String,
   playstationTag: String,
   friends: [{type: Schema.Types.ObjectId, ref:'Profile'}],
-  gameCollection: [{type: Schema.Types.ObjectId, ref:'Game'}],
+  gameCollection: [String],
 }, {
   timestamps: true
 })
