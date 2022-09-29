@@ -28,13 +28,7 @@ function gameDetails(req, res) {
   })
 }
 
-function addGame(req,res) {
-  console.log('HEY THIS IS MY DATA!!')
-
-}
-
 export {
   search,
   gameDetails,
-  addGame
 }

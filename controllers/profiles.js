@@ -29,4 +29,22 @@ function addPhoto(req, res) {
   })
 }
 
-export { index, addPhoto }
+function addGame(req, res) {
+  const gameId = req.body.id
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.gameCollection.push(gameId)
+    profile.save()
+    .then(profileAdd => res.json(profileAdd))
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json(err)
+  })
+}
+
+export { 
+  index, 
+  addPhoto,
+  addGame,
+}
