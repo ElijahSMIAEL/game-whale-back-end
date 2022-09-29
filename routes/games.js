@@ -10,6 +10,7 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.get('/search/:query', checkAuth, gamesCtrl.search)
 router.get('/:id', checkAuth, gamesCtrl.gameDetails)
+router.post('/:id', checkAuth, gamesCtrl.addGame)
 export {
   router
 }
