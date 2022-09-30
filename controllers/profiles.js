@@ -33,9 +33,15 @@ function addGame(req, res) {
   const gameId = req.body.id
   Profile.findById(req.params.id)
   .then(profile => {
-    profile.gameCollection.push(gameId)
-    profile.save()
-    .then(profileAdd => res.json(profileAdd))
+    if(!profile.gameCollection.some(collect => {
+      return parseInt(collect) === gameId
+    })) {
+      profile.gameCollection.push(gameId)
+      profile.save()
+      .then(profileAdd => res.json(profileAdd))
+    } else {
+      return
+    }
   })
   .catch(err => {
     console.log(err)
